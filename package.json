@@ -21,6 +21,9 @@
     "vue": "^3.5.22"
   },
   "devDependencies": {
+    "@vitest/eslint-plugin": "latest",
+    "@vue/eslint-config-prettier": "^10.2.0",
+    "@vue/eslint-config-typescript": "latest",
     "@vue/tsconfig": "^0.8.1",
     "eslint-plugin-oxlint": "~1.28.0",
     "eslint-plugin-playwright": "^2.2.2",
