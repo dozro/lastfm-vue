@@ -5,9 +5,15 @@ module.exports = {
   entry: './src/index.ts',
 
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js',
-    library: 'lastfm',
+    path: path.resolve('dist'),
+    filename: 'index.js',
+    library: {
+      type: 'module', // ESM output (recommended for packages)
+    },
+    clean: true,
+  },
+  experiments: {
+    outputModule: true,
   },
 
   module: {
@@ -39,5 +45,8 @@ module.exports = {
     new VueLoaderPlugin()
   ],
 
-  target: 'node'
+  target: 'node',
+  externals: {
+    vue: 'vue',
+  },
 };
