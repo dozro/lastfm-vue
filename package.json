@@ -17,7 +17,7 @@
     "build:tsup": "tsup src/index.ts --format esm,cjs --dts",
     "build:vuelib": "vite build --config vite.vue.lib.config.ts",
     "build:webpack": "webpack --mode production",
-    "build": "bun run build:webpack && bun run build:ts && bun run build:vuelib"
+    "build": "bun run build:webpack && bun run build:ts "
   },
   "files": [
     "dist/*",
