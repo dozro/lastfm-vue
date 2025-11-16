@@ -4,12 +4,7 @@ import dts from 'vite-plugin-dts';
 import { resolve } from 'path';
 
 export default defineConfig({
-  plugins: [
-    vue(),
-    dts({
-      insertTypesEntry: true,
-    }),
-  ],
+  plugins: [vue(), dts()],
   build: {
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
@@ -17,7 +12,7 @@ export default defineConfig({
       fileName: (format) => `project-angus-lastfm.${format}.js`,
     },
     rollupOptions: {
-      external: ['vue', 'ky', 'dotenv'],
+      external: ['vue', 'ky'],
       output: {
         globals: {
           vue: 'Vue',

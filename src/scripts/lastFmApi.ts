@@ -5,9 +5,7 @@ import {UserInfo} from "./UserInfo";
 import { apiRootURL, getHttpHeaders } from './baseI';
 import { UserLovedTracks, UserRecentTracks } from './UserTracks';
 
-const apiKey="abc"
-
-export async function getUser(username:string):Promise<UserInfo>{
+export async function getUser(username:string, apiKey: string):Promise<UserInfo>{
     if(apiKey === undefined){
         throw new Error("Api Key is undefined")
     }
@@ -15,7 +13,7 @@ export async function getUser(username:string):Promise<UserInfo>{
     return u;
 }
 
-export async function getLovedTracks(username:string):Promise<UserLovedTracks>{
+export async function getLovedTracks(username:string, apiKey: string):Promise<UserLovedTracks>{
     if(apiKey === undefined){
         throw new Error("Api Key is undefined")
     }
@@ -23,7 +21,7 @@ export async function getLovedTracks(username:string):Promise<UserLovedTracks>{
     return u;
 }
 
-export async function getRecentTracks(username:string):Promise<UserRecentTracks>{
+export async function getRecentTracks(username:string, apiKey: string):Promise<UserRecentTracks>{
     if(apiKey === undefined){
         throw new Error("Api Key is undefined")
     }
