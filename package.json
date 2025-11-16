@@ -2,7 +2,7 @@
   "name": "@itsrye/project-angus-lastfm",
   "description": "a (incomplete) template for using lastfm in Vue",
   "author": "Rye <npm@itsrye.dev> (http://itsrye.dev/)",
-  "version": "0.0.07",
+  "version": "0.0.08",
   "private": false,
   "type": "module",
   "engines": {
@@ -15,9 +15,9 @@
   "scripts": {
     "build:ts": "tsc --emitDeclarationOnly -p tsconfig.build.json",
     "build:tsup": "tsup src/index.ts --format esm,cjs --dts",
-    "build:vuelib": "vue-cli-service build --target lib --name angus_lastfm 'src/components/index.ts'",
+    "build:vuelib": "vue-cli-service build --dest ./dist/vue --target lib --name angus_lastfm 'src/components/index.ts'",
     "build:webpack": "webpack --mode production",
-    "build": "bun run build:webpack && bun run build:ts "
+    "build": "bun run build:webpack && bun run build:ts && bun run build:vuelib"
   },
   "files": [
     "dist/*",
@@ -33,9 +33,9 @@
       "import": "./dist/index.js",
       "types": "./dist/index.d.ts"
     },
-    "./lib": {
-      "import": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+    "./vue": {
+      "require": "./dist/vue/angus_lastfm.common.js",
+      "import": "./dist/vue/angus_lastfm.umd.js"
     }
   },
   "dependencies": {
