@@ -45,9 +45,6 @@
   "devDependencies": {
     "@vitejs/plugin-vue": "^6.0.1",
     "@vitest/eslint-plugin": "latest",
-    "@vue/eslint-config-prettier": "^10.2.0",
-    "@vue/eslint-config-typescript": "latest",
-    "@vue/tsconfig": "^0.8.1",
     "eslint-plugin-vue": "~10.5.0",
     "typescript": "^6.0.0-dev.20251116",
     "vite": "7.2.2",
