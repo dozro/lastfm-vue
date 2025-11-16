@@ -2,7 +2,7 @@
   "name": "@itsrye/project-angus-lastfm",
   "description": "a (incomplete) template for using lastfm in Vue",
   "author": "Rye <npm@itsrye.dev> (http://itsrye.dev/)",
-  "version": "0.0.05",
+  "version": "0.0.06",
   "private": false,
   "type": "module",
   "engines": {
