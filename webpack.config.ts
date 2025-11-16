@@ -1,5 +1,5 @@
-const path = require('path');
-const { VueLoaderPlugin } = require('vue-loader');
+import path from 'path';
+import { VueLoaderPlugin } from 'vue-loader';
 
 module.exports = {
   entry: './src/index.ts',

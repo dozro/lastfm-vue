@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { watchEffect, ref } from 'vue'
 
-import { getRecentTracks } from "./scripts/lastFmApi"
-import { UserRecentTracks } from "./scripts/UserTracks"
-import type { Track } from "./scripts/types/Track.ts"
+import { getRecentTracks } from "../scripts/lastFmApi"
+import { UserRecentTracks } from "../scripts/UserTracks"
+import type { Track } from "../scripts/types/Track"
 
 const props = defineProps<{
   username: string

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { watchEffect, ref } from 'vue'
 
-import {getUser} from "./scripts/lastFmApi"
+import {getUser} from "../scripts/lastFmApi"
 const props = defineProps<{
   username: string
 }>()

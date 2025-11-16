@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { watchEffect, ref } from 'vue'
 
-import {getLovedTracks} from "./scripts/lastFmApi"
-import { UserLovedTracks } from "./scripts/UserTracks"
+import {getLovedTracks} from "../scripts/lastFmApi"
+import { UserLovedTracks } from "../scripts/UserTracks"
 
 const props = defineProps<{
   username: string

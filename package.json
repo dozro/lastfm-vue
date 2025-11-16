@@ -14,9 +14,10 @@
   "license": "SEE LICENSE IN LICENSE",
   "scripts": {
     "build:ts": "tsc --emitDeclarationOnly -p tsconfig.build.json",
+    "build:tsup": "tsup src/index.ts --format esm,cjs --dts",
+    "build:vuelib": "vue-cli-service build --target lib --name angus_lastfm 'src/components/index.ts'",
     "build:webpack": "webpack --mode production",
-    "build": "bun run build:webpack && bun run build:ts ",
-    "build:tsup": "tsup src/index.ts --format esm,cjs --dts"
+    "build": "bun run build:webpack && bun run build:ts "
   },
   "files": [
     "dist/*",
@@ -43,11 +44,14 @@
     "dotenv": "^17.2.3",
     "ky": "^1.14.0",
     "tailwindcss": "^4.1.17",
-    "vue": "^3.5.22"
+    "vue": "3.5.0"
   },
   "devDependencies": {
     "@swc/register": "latest",
     "@vitest/eslint-plugin": "latest",
+    "@vue/babel-preset-app": "5.0.0",
+    "@vue/cli-service": "5.0.1",
+    "@vue/cli-plugin-typescript": "5.0.1",
     "@vue/eslint-config-prettier": "^10.2.0",
     "@vue/eslint-config-typescript": "latest",
     "@vue/tsconfig": "^0.8.1",
@@ -58,8 +62,8 @@
     "ts-loader": "^9.0.0",
     "tsup": "^8.5.1",
     "typescript": "^6.0.0-dev.20251116",
-    "vue-loader": "latest",
-    "vue-tsc": "^3.1.1",
+    "vue-loader": "17.0.0",
+    "vue-tsc": "3.0.0",
     "webpack": "^5.0.0",
     "webpack-cli": "^6.0.0"
   }

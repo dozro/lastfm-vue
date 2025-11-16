@@ -1,3 +1,4 @@
-export { default as ListeningNow } from "./ListeningNow.vue";
-export { default as UserCard } from "./UserCard.vue"
-export { UserInfo, getUser, User} from "./scripts/index"
+export { default as ListeningNow } from "./components/ListeningNow.vue";
+export { default as UserCard } from "./components/UserCard.vue";
+export { default as LovedTracks } from "./components/LovedTracks.vue";
+export { UserInfo, getUser, User} from "./scripts/index";
