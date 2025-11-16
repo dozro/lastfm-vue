@@ -11,7 +11,7 @@
   "bugs": {
     "url": "https://github.com/dozro/lastfm-vue/issues"
   },
-  "license": "HL3-BDS-BOD-ECO-EXTR-FFD-LAW-MIL-SV",
+  "license": "SEE LICENSE IN LICENSE",
   "scripts": {
     "build:ts": "tsc --emitDeclarationOnly -p tsconfig.build.json",
     "build:tsup": "tsup src/index.ts --format esm,cjs --dts",
