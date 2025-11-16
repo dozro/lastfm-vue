@@ -1,6 +1,8 @@
 {
   "name": "@itsrye/project-angus-lastfm",
-  "version": "0.0.04",
+  "description": "a (incomplete) template for using lastfm in Vue",
+  "author": "Rye <npm@itsrye.dev> (http://itsrye.dev/)",
+  "version": "0.0.05",
   "private": false,
   "type": "module",
   "engines": {
@@ -12,6 +14,16 @@
   "license": "SEE LICENSE IN LICENSE",
   "scripts": {
     "build": "webpack"
+  },
+  "files": [
+    "dist/*",
+    "scr/*"
+  ],
+  "exports": {
+    ".": "./dist/index.js",
+    "./lib": "./dist/index.js",
+    "./lib/index": "./dist/index.js",
+    "./lib/index.js": "./dist/index.js"
   },
   "dependencies": {
     "@nuxt/ui": "^4.1.0",
