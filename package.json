@@ -34,9 +34,9 @@
       "import": "./dist/index.js"
     },
     "./vue": {
+      "types": "./dist/vue/*.vue.d.ts",
       "require": "./dist/vue/angus_lastfm.cjs",
-      "import": "./dist/vue/angus_lastfm.esm.js",
-      "types": "./dist/vue/*.vue.d.ts"
+      "import": "./dist/vue/angus_lastfm.esm.js"
     }
   },
   "dependencies": {
