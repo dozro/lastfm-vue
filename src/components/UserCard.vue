@@ -3,16 +3,17 @@ import { watchEffect, ref } from 'vue'
 
 import {getUser} from "../scripts/lastFmApi"
 const props = defineProps<{
-  username: string
+  username: string,
+  apiKey: string,
 }>()
 const avatarUrl = ref<string>()
 const fullName = ref<string>()
 const url = ref<string>()
 
 watchEffect(async () => {
-  if (props.username) {
+  if (props.username && props.apiKey) {
     try {
-      const user = await getUser(props.username)
+      const user = await getUser(props.username, props.apiKey)
       avatarUrl.value = user.getAvatarUrl().toString()
       fullName.value = user.getName()
       url.value = user.getUserUrl().toString()

@@ -2,7 +2,7 @@
   "name": "@itsrye/project-angus-lastfm",
   "description": "a (incomplete) template for using lastfm in Vue",
   "author": "Rye <npm@itsrye.dev> (http://itsrye.dev/)",
-  "version": "0.0.10-PREVIEW",
+  "version": "0.0.18-PREVIEW",
   "private": false,
   "type": "module",
   "engines": {
@@ -13,42 +13,43 @@
   },
   "license": "SEE LICENSE IN LICENSE",
   "scripts": {
-    "build:ts": "tsc --emitDeclarationOnly -p tsconfig.build.json",
-    "build:vuelib": "vite build --config vite.vue.lib.config.js",
-    "build": "bun run build:ts && bun run build:vuelib"
+    "build": "rimraf dist && vue-tsc && vite build"
   },
   "files": [
-    "dist/*",
-    "dist/index.d.ts",
-    "src/*",
-    "LICENSE",
-    "README.md"
+    "dist",
+    "src",
+    "LICENSE"
   ],
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "./dist/project-angus-lastfm.umd.js",
+  "module": "./dist/project-angus-lastfm.es.js",
+  "types": "./dist/types/index.d.ts",
   "exports": {
     ".": {
-      "types": "./dist/vue/*.vue.d.ts",
-      "require": "./dist/angus_lastfm.cjs",
-      "import": "./dist/angus_lastfm.esm.js"
+      "types": "./dist/index.d.ts",
+      "import": "./dist/project-angus-lastfm.es.js",
+      "require": "./dist/project-angus-lastfm.umd.js"
     }
   },
-  "dependencies": {
-    "@types/node": "^24.10.1",
-    "dotenv": "^17.2.3",
-    "ky": "^1.14.0"
-  },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^5",
+    "@microsoft/api-extractor": "^7.55.0",
+    "@vitejs/plugin-vue": "^6.0.1",
+    "@vue/language-core": "^3.1.4",
     "@vue/tsconfig": "^0.8.1",
-    "typescript": "^6.0.0-dev.20251116",
-    "vite": "^7",
-    "vite-plugin-dts": "^4",
-    "vue-tsc": "^3"
+    "rimraf": "^5.0.1",
+    "typescript": "^5.0.0",
+    "unplugin-dts": "^1.0.0-beta.0",
+    "vite": "7.2.2",
+    "vue": ">=3.3",
+    "vue-tsc": "^3.1.4"
   },
   "peerDependencies": {
     "@nuxt/ui": "^4.1.0",
     "vue": ">=3.3",
-    "tailwindcss": "^4.1.17"
+    "tailwindcss": "^4.1.17",
+    "ky": "^1.14.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://git.itsrye.dev/JS-Libraries/lastfm-vue.git"
   }
 }
