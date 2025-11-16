@@ -5,7 +5,6 @@
     "": {
       "name": "@itsrye/project-angus-lastfm",
       "dependencies": {
-        "dotenv": "^17.2.3",
         "ky": "^1.14.0",
       },
       "devDependencies": {
@@ -18,6 +17,7 @@
       },
       "peerDependencies": {
         "@nuxt/ui": "^4.1.0",
+        "dotenv": "^17.2.3",
         "tailwindcss": "^4.1.17",
         "vue": ">=3.3",
       },
