@@ -41,7 +41,6 @@
   },
   "dependencies": {
     "@types/node": "^24.10.1",
-    "ajv": "^6",
     "dotenv": "^17.2.3",
     "ky": "^1.14.0"
   },
