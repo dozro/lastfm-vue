@@ -1,6 +1,6 @@
 {
   "name": "@itsrye/project-angus-lastfm",
-  "version": "0.0.01",
+  "version": "0.0.04",
   "private": false,
   "type": "module",
   "engines": {
@@ -30,6 +30,8 @@
     "ts-loader": "^9.0.0",
     "sass-loader": "^15.0.0",
     "vue-loader": "latest",
-    "@swc/register": "latest"
+    "@swc/register": "latest",
+    "webpack": "^5.0.0",
+    "webpack-cli": "^6.0.0"
   }
 }

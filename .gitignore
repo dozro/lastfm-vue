@@ -33,3 +33,6 @@ Temporary Items
 .apdisk
 
 # End of https://mrkandreev.name/snippets/gitignore-generator/#Vuejs,macOS
+
+.clj-kondo/
+.lsp/
