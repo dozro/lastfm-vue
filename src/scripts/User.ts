@@ -1,6 +1,6 @@
-import {UserInfo} from "./UserInfo.ts"
-import { getLovedTracks, getUser } from "./lastFmApi.ts"
-import { UserLovedTracks } from "./UserTracks.ts"
+import {UserInfo} from "./UserInfo"
+import { getLovedTracks, getUser } from "./lastFmApi"
+import { UserLovedTracks } from "./UserTracks"
 
 class User{
     private user:string

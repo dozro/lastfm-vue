@@ -36,3 +36,5 @@ Temporary Items
 
 .clj-kondo/
 .lsp/
+.envrc
+*.env

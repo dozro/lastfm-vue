@@ -13,26 +13,38 @@
   },
   "license": "SEE LICENSE IN LICENSE",
   "scripts": {
-    "build": "webpack"
+    "build:ts": "tsc --emitDeclarationOnly -p tsconfig.build.json",
+    "build:webpack": "webpack --mode production",
+    "build": "npm run build:ts && npm run build:webpack",
+    "build:tsup": "tsup src/index.ts --format esm,cjs --dts"
   },
   "files": [
     "dist/*",
-    "scr/*"
+    "scr/*",
+    "LICENSE",
+    "README.md"
   ],
+  "types": "dist/index.d.ts",
   "exports": {
-    ".": "./dist/index.js",
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
+    },
     "./lib": "./dist/index.js",
     "./lib/index": "./dist/index.js",
     "./lib/index.js": "./dist/index.js"
   },
   "dependencies": {
     "@nuxt/ui": "^4.1.0",
+    "@types/node": "^24.10.1",
     "dotenv": "^17.2.3",
     "ky": "^1.14.0",
     "tailwindcss": "^4.1.17",
     "vue": "^3.5.22"
   },
   "devDependencies": {
+    "@swc/register": "latest",
     "@vitest/eslint-plugin": "latest",
     "@vue/eslint-config-prettier": "^10.2.0",
     "@vue/eslint-config-typescript": "latest",
@@ -40,12 +52,12 @@
     "eslint-plugin-oxlint": "~1.28.0",
     "eslint-plugin-playwright": "^2.2.2",
     "eslint-plugin-vue": "~10.5.0",
-    "typescript": "~5.9.0",
-    "vue-tsc": "^3.1.1",
-    "ts-loader": "^9.0.0",
     "sass-loader": "^16.0.0",
+    "ts-loader": "^9.0.0",
+    "tsup": "^8.5.1",
+    "typescript": "^6.0.0-dev.20251116",
     "vue-loader": "latest",
-    "@swc/register": "latest",
+    "vue-tsc": "^3.1.1",
     "webpack": "^5.0.0",
     "webpack-cli": "^6.0.0"
   }

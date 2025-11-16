@@ -1,0 +1,1 @@
+# A (incomplete) template to use lastfm in Vue

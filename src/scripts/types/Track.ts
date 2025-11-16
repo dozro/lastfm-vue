@@ -1,5 +1,5 @@
-import type { Artist } from "./Artist.ts"
-import { Image } from "./Image.ts"
+import type { Artist } from "./Artist"
+import { Image } from "./Image"
 
 export type Track = {
     name:string,

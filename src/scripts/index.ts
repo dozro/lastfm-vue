@@ -1,6 +1,6 @@
 // index
-import { UserInfo } from "./UserInfo.ts";
-import { getUser } from "./lastFmApi.ts"
-import { User } from "./User.ts"
+import { UserInfo } from "./UserInfo";
+import { getUser } from "./lastFmApi"
+import { User } from "./User"
 
 export { UserInfo, getUser, User}

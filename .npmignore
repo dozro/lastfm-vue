@@ -1,2 +1,4 @@
 renovate.json
 .vscode
+*.env
+.envrc
