@@ -1,0 +1,11 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "enabled": true,
+  "managerFilePatterns": [
+    "/(^|/)package\\.json$/",
+    "/(^|/)pnpm-workspace\\.yaml$/",
+    "/(^|/)\\.yarnrc\\.yml$/",
+    "/(^|/)bun\\.lock$/"
+  ],
+  "automergeType": "pr"
+}

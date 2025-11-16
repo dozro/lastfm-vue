@@ -1,25 +1,20 @@
 <script setup lang="ts">
 import { watchEffect, ref } from 'vue'
 
-import { getRecentTracks } from "./scripts/lastFmApi"
-import { UserRecentTracks } from "./scripts/UserTracks"
-import type { Track } from "./scripts/types/Track.ts"
+import {getLovedTracks} from "./scripts/lastFmApi"
+import { UserLovedTracks } from "./scripts/UserTracks"
 
 const props = defineProps<{
   username: string
 }>()
 
-const tracks = ref<UserRecentTracks>()
-const currentSongName = ref<Track>()
+const lovedTracks = ref<UserLovedTracks>()
 
 
 watchEffect(async () => {
   if (props.username) {
     try {
-      tracks.value = await getRecentTracks(props.username)
-      if(tracks.value.getMostRecentTrack() !== undefined){
-        currentSongName.value = tracks.value.getMostRecentTrack()
-      }
+      lovedTracks.value = await getLovedTracks(props.username)
     } catch (err) {
       console.error('Failed to fetch loved tracks:', err)
     }
@@ -28,7 +23,11 @@ watchEffect(async () => {
 </script>
 
 <template>
+     <ul v-if="lovedTracks">
+      <li v-for="track in lovedTracks.getLovedTracks" :key="track.name">
+        {{ track.name }} – {{ track.artist }}
+      </li>
+    </ul>
     <div class="mx-auto flex max-w-sm items-center gap-x-4 rounded-xl bg-white p-6 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
-        <p>currently listening to {{currentSongName}}</p>
     </div>
 </template>

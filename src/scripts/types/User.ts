@@ -14,6 +14,12 @@ export interface UserGetInfoType{
     playlists:number,
     bootstrap:number,
 }
+type Tracks = {
+    track:Array<Track>
+}
 export interface UserGetLovedTracks{
-    track: Array<Track>
+    lovedtracks:Tracks
+}
+export interface UserGetRecentTracks{
+    recenttracks:Tracks
 }

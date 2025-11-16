@@ -1,4 +1,5 @@
 import type { Artist } from "./Artist.ts"
+import { Image } from "./Image.ts"
 
 export type Track = {
     name:string,
@@ -6,4 +7,5 @@ export type Track = {
     url:URL,
     date:Date,
     artist:Artist
+    image:Array<Image>
 }

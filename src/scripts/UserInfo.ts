@@ -11,7 +11,7 @@ export class UserInfo{
     private realName!:string
     private userURL!:URL
     private avatarURL!:URL
-    constructor(username:string, apikey:string){
+    private constructor(username:string, apikey:string){
         this.username = username
         this.apikey = apikey
         this.fetchData()
@@ -41,5 +41,10 @@ export class UserInfo{
 
     public getUserUrl():URL{
         return this.userURL;
+    }
+    public static async create(username: string, apikey: string):Promise<UserInfo> {
+        const instance = new UserInfo(username, apikey)
+        await instance.fetchData()
+        return instance
     }
 }
