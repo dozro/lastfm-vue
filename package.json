@@ -2,7 +2,7 @@
   "name": "@itsrye/project-angus-lastfm",
   "description": "a (incomplete) template for using lastfm in Vue",
   "author": "Rye <npm@itsrye.dev> (http://itsrye.dev/)",
-  "version": "0.0.10",
+  "version": "0.0.17-PREVIEW",
   "private": false,
   "type": "module",
   "engines": {
@@ -13,14 +13,16 @@
   },
   "license": "SEE LICENSE IN LICENSE",
   "scripts": {
-    "build": "vite build"
+    "build": "rimraf dist && vue-tsc && vite build"
   },
   "files": [
-    "dist"
+    "dist",
+    "src",
+    "LICENSE"
   ],
   "main": "./dist/project-angus-lastfm.umd.js",
   "module": "./dist/project-angus-lastfm.es.js",
-  "types": "./dist/index.d.ts",
+  "types": "./dist/types/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -33,8 +35,9 @@
     "@vitejs/plugin-vue": "^6.0.1",
     "@vue/language-core": "^3.1.4",
     "@vue/tsconfig": "^0.8.1",
-    "typescript": "^6.0.0-dev.20251116",
-    "unplugin-dts": "^1.0.0-beta.6",
+    "rimraf": "^5.0.1",
+    "typescript": "^5.0.0",
+    "unplugin-dts": "^1.0.0-beta.0",
     "vite": "7.2.2",
     "vue": ">=3.3"
   },
@@ -43,5 +46,9 @@
     "vue": ">=3.3",
     "tailwindcss": "^4.1.17",
     "ky": "^1.14.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://git.itsrye.dev/JS-Libraries/lastfm-vue.git"
   }
 }

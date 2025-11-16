@@ -27,7 +27,7 @@ watchEffect(async () => {
     <h2>Recent Tracks for {{ username }}</h2>
     <ul>
       <li v-for="track in tracks.getRecentTracks()" :key="track.name">
-        {{ track.name }} by {{ track.artist['#text'] }}
+        {{ track.name }} by {{ track.artist }}
       </li>
     </ul>
   </div>

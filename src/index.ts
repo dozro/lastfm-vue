@@ -1,24 +1,15 @@
-import ListeningNow from "./components/ListeningNow.vue";
-import UserCard from "./components/UserCard.vue";
-import LovedTracks from "./components/LovedTracks.vue";
-import { UserInfo, getUser, User } from "./scripts/index";
+import type { App } from 'vue'
+import components from './components'
 
-export {
-    ListeningNow,
-    UserCard,
-    LovedTracks,
-    UserInfo,
-    getUser,
-    User,
+function install(app: App) {
+  (Object.keys(components) as Array<keyof typeof components>)
+    .forEach(key => {
+      app.component(key, components[key])
+    })
 }
 
-const lib = {
-    ListeningNow,
-    UserCard,
-    LovedTracks,
-    UserInfo,
-    getUser,
-    User,
-};
 
-export default lib;
+export default { install }
+
+export * from './components'
+export * from './scripts'
