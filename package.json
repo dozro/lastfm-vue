@@ -2,7 +2,7 @@
   "name": "@itsrye/project-angus-lastfm",
   "description": "a (incomplete) template for using lastfm in Vue",
   "author": "Rye <npm@itsrye.dev> (http://itsrye.dev/)",
-  "version": "0.0.17-PREVIEW",
+  "version": "0.0.18-PREVIEW",
   "private": false,
   "type": "module",
   "engines": {
@@ -39,7 +39,8 @@
     "typescript": "^5.0.0",
     "unplugin-dts": "^1.0.0-beta.0",
     "vite": "7.2.2",
-    "vue": ">=3.3"
+    "vue": ">=3.3",
+    "vue-tsc": "^3.1.4"
   },
   "peerDependencies": {
     "@nuxt/ui": "^4.1.0",
