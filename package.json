@@ -51,7 +51,7 @@
     "@vitest/eslint-plugin": "latest",
     "@vue/babel-preset-app": "5.0.0",
     "@vue/cli-plugin-typescript": "5.0.1",
-    "@vue/cli-service": "5.0.1",
+    "@vue/cli-service": "5.0.9",
     "@vue/eslint-config-prettier": "^10.2.0",
     "@vue/eslint-config-typescript": "latest",
     "@vue/tsconfig": "^0.8.1",
