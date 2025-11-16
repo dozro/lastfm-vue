@@ -1,9 +1,9 @@
 // Project Gowers (part of Project Angus)
 
 import ky from 'ky';
-import { apiRootURL, getHttpHeaders } from './baseI';
-import type { UserGetLovedTracks } from './types/User';
-import type { Track } from "./types/Track"
+import { apiRootURL, getHttpHeaders } from './baseI.ts';
+import type { UserGetLovedTracks } from './types/User.ts';
+import type { Track } from "./types/Track.ts"
 
 export class UserLovedTracks{
     private username:string

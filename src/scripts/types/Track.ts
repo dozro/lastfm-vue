@@ -1,4 +1,4 @@
-import type { Artist } from "./Artist"
+import type { Artist } from "./Artist.ts"
 
 export type Track = {
     name:string,

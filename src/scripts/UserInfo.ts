@@ -1,8 +1,8 @@
 // Project Gowers (part of Project Angus)
 
 import ky from 'ky';
-import { apiRootURL, getHttpHeaders } from './baseI';
-import type { UserGetInfoType } from './types/User';
+import { apiRootURL, getHttpHeaders } from './baseI.ts';
+import type { UserGetInfoType } from './types/User.ts';
 
 export class UserInfo{
     private username:string

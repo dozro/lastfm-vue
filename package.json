@@ -6,15 +6,15 @@
   "engines": {
     "node": "^20.19.0 || >=22.12.0"
   },
+  "scripts": {
+    "build": "webpack"
+  },
   "dependencies": {
     "@nuxt/ui": "^4.1.0",
-    "@tailwindcss/vite": "^4.1.17",
     "dotenv": "^17.2.3",
     "ky": "^1.14.0",
-    "lastfm": "^0.9.4",
     "tailwindcss": "^4.1.17",
-    "vue": "^3.5.22",
-    "vue-router": "^4.6.3"
+    "vue": "^3.5.22"
   },
   "devDependencies": {
     "@vue/tsconfig": "^0.8.1",
@@ -22,6 +22,9 @@
     "eslint-plugin-playwright": "^2.2.2",
     "eslint-plugin-vue": "~10.5.0",
     "typescript": "~5.9.0",
-    "vue-tsc": "^3.1.1"
+    "vue-tsc": "^3.1.1",
+    "ts-loader": "^9.0.0",
+    "vue-loader": "latest",
+    "@swc/register": "latest"
   }
 }

@@ -1,4 +1,4 @@
-import type { Track } from "./Track"
+import type { Track } from "./Track.ts"
 
 export interface UserGetInfoType{
     id:number,

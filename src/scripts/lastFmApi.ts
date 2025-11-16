@@ -1,9 +1,9 @@
 // Project Gowers (part of Project Angus)
 
 import ky from 'ky';
-import {UserInfo} from "./UserInfo";
-import { apiRootURL, getHttpHeaders } from './baseI';
-import { UserLovedTracks } from './UserTracks';
+import {UserInfo} from "./UserInfo.ts";
+import { apiRootURL, getHttpHeaders } from './baseI.ts';
+import { UserLovedTracks } from './UserTracks.ts';
 
 const apiKey=process.env.LASTFM_API_KEY
 
