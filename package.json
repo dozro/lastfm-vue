@@ -20,6 +20,7 @@
   },
   "files": [
     "dist/*",
+    "dist/index.d.ts",
     "scr/*",
     "LICENSE",
     "README.md"
