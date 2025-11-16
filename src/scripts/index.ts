@@ -1,6 +1,14 @@
 // index
 import { UserInfo } from "./UserInfo";
-import { getUser } from "./lastFmApi"
+import { getUser, getLovedTracks, getRecentTracks } from "./lastFmApi"
 import { User } from "./User"
 
-export { UserInfo, getUser, User}
+export { 
+    UserInfo, 
+    User,
+}
+export { 
+    getRecentTracks,
+    getUser, 
+    getLovedTracks,
+}
