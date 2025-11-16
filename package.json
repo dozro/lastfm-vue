@@ -22,7 +22,7 @@
   "files": [
     "dist/*",
     "dist/index.d.ts",
-    "scr/*",
+    "src/*",
     "LICENSE",
     "README.md"
   ],
