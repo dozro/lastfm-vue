@@ -14,7 +14,7 @@ export default class UserInfo{
     private userURL!:URL
     private avatarImg?:Array<ImageJson>
     private avatarURL!:URL
-    private playcount:number
+    private playcount!:number
     private constructor(username:string, apikey:string){
         this.username = username
         this.apikey = apikey

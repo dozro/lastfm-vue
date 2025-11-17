@@ -30,7 +30,6 @@ export default defineConfig({
       external: [
         'vue', 
         'ky',
-        /node_modules/,
       ],
       output: {
         globals: {
