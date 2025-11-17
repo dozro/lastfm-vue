@@ -17,10 +17,12 @@
         "@babel/plugin-transform-typescript": "^7.28.5",
         "@babel/preset-typescript": "^7.28.5",
         "@microsoft/api-extractor": "^7.55.0",
+        "@tsconfig/node22": "^22.0.4",
         "@types/jest": "^30.0.0",
         "@vitejs/plugin-vue": "^6.0.1",
         "@vue/language-core": "^3.1.4",
         "@vue/tsconfig": "^0.8.1",
+        "babel-jest": "^30.2.0",
         "rimraf": "^5.0.1",
         "sass-embedded": "^1.93.3",
         "scss-loader": "^0.0.1",
@@ -474,6 +476,8 @@
     "@tanstack/vue-table": ["@tanstack/vue-table@8.21.3", "", { "dependencies": { "@tanstack/table-core": "8.21.3" }, "peerDependencies": { "vue": ">=3.2" } }, "sha512-rusRyd77c5tDPloPskctMyPLFEQUeBzxdQ+2Eow4F7gDPlPOB1UnnhzfpdvqZ8ZyX2rRNGmqNnQWm87OI2OQPw=="],
 
     "@tanstack/vue-virtual": ["@tanstack/vue-virtual@3.13.12", "", { "dependencies": { "@tanstack/virtual-core": "3.13.12" }, "peerDependencies": { "vue": "^2.7.0 || ^3.0.0" } }, "sha512-vhF7kEU9EXWXh+HdAwKJ2m3xaOnTTmgcdXcF2pim8g4GvI7eRrk2YRuV5nUlZnd/NbCIX4/Ja2OZu5EjJL06Ww=="],
+
+    "@tsconfig/node22": ["@tsconfig/node22@22.0.4", "", {}, "sha512-GI0gtqW+8Bz9UMOsOO1z3w1ebspOkVjSyeJ18r96LW82OOZenpzWXti/+f/MgPy1hqXTIRXn8QpGIOYHgKkTnQ=="],
 
     "@tybys/wasm-util": ["@tybys/wasm-util@0.10.1", "", { "dependencies": { "tslib": "^2.4.0" } }, "sha512-9tTaPJLSiejZKx+Bmog4uSubteqTvFrVrURwkmHixBo0G4seD0zUxp98E1DzUBJxLQ3NPwXrGKDiVjwx/DpPsg=="],
 

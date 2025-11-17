@@ -14,7 +14,7 @@
   },
   "license": "SEE LICENSE IN LICENSE",
   "scripts": {
-    "build": "rimraf dist && vue-tsc -p ./tsconfig.node.json && vite build && mkdir -p dist/components && cp -a src/components/* dist/components/",
+    "build": "rimraf dist && vue-tsc && vite build && mkdir -p dist/components && cp -a src/components/* dist/components/",
     "build:publishSnapshot": "bun run build && ./helper-scripts/npm-snapshot-pre-publish.sh && bunx npm publish --tag snapshot && ./helper-scripts/npm-snapshot-post-publish.sh"
   },
   "files": [
