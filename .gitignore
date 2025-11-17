@@ -38,3 +38,7 @@ Temporary Items
 .lsp/
 .envrc
 *.env
+
+# Auto-generated type declarations
+auto-imports.d.ts
+components.d.ts

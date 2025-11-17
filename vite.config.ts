@@ -3,6 +3,8 @@ import vue from '@vitejs/plugin-vue';
 import dts from 'unplugin-dts/vite';
 import ui from '@nuxt/ui/vite'
 import { resolve } from 'path';
+import sassDts from 'vite-plugin-sass-dts'
+
 
 /** @type {import('vite').UserConfig} */
 export default defineConfig({
@@ -16,6 +18,7 @@ export default defineConfig({
       tsconfigPath: './tsconfig.json',
     }),
     ui(),
+    sassDts(),
   ],
   build: {
     lib: {
