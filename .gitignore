@@ -38,3 +38,11 @@ Temporary Items
 .lsp/
 .envrc
 *.env
+
+# Auto-generated type declarations
+auto-imports.d.ts
+components.d.ts
+
+*.tsbuildinfo
+.lh/*
+.snapshot_counter.txt

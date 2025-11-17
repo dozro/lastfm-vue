@@ -1,7 +1,8 @@
 import ky from 'ky';
+import { XMLParser } from "fast-xml-parser";
 import { apiRootURL, getHttpHeaders } from '../baseI';
-import type { UserGetRecentTracks } from '../types/User';
-import type { Track } from "../types/Track"
+import { convertUserGetRecentTracksXMLtoUserGetRecentTracks, type UserGetRecentTracks, type UserGetRecentTracksXML } from '../types/User';
+import { convertTrackXmlToTrack, type Track } from "../types/Track"
 
 export default class UserRecentTracks{
     private username:string
@@ -19,13 +20,16 @@ export default class UserRecentTracks{
     }
     public async fetchData():Promise<void> {
         const resp = await ky.get(
-            `${apiRootURL}?method=user.getrecenttracks&user=${this.username}&api_key=${this.apikey}&format=json`,
+            `${apiRootURL}?method=user.getrecenttracks&user=${this.username}&api_key=${this.apikey}&format=xml`,
             {
                 method: "get",
                 headers: getHttpHeaders()
             },
-        ).json()
-        const respAs:UserGetRecentTracks = (resp as UserGetRecentTracks)
+        ).text()
+
+        let jObj = UserRecentTracks.xmlParser.parse(resp)
+        const respAsXML = (jObj as UserGetRecentTracksXML)
+        const respAs = convertUserGetRecentTracksXMLtoUserGetRecentTracks(respAsXML)
         this.recentTracks = respAs.recenttracks.track
     }
     public static async create(username: string, apikey: string):Promise<UserRecentTracks> {
@@ -33,4 +37,5 @@ export default class UserRecentTracks{
         await instance.fetchData()
         return instance
     }
+    private static xmlParser:XMLParser = new XMLParser();
 }

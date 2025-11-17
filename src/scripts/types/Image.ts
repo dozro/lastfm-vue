@@ -1,11 +1,9 @@
-export class Image{
-    private size:string
-    private text:string
-    constructor(size:string, text:string){
-        this.size = size
-        this.text = text
-    }
-    public getImageURL(){
-        return this.text
-    }
+export type Image = {
+    _size:  string;
+    __text: string;
+}
+
+export interface ImageJson {
+    size:string;
+    "#text":string;
 }

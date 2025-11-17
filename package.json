@@ -3,7 +3,7 @@
   "name": "@itsrye/project-angus-lastfm",
   "description": "a (incomplete) template for using lastfm in Vue",
   "author": "Rye <npm@itsrye.dev> (http://itsrye.dev/)",
-  "version": "0.0.18-PREVIEW",
+  "version": "0.0.14",
   "private": false,
   "type": "module",
   "engines": {
@@ -14,7 +14,8 @@
   },
   "license": "SEE LICENSE IN LICENSE",
   "scripts": {
-    "build": "rimraf dist && vue-tsc && vite build"
+    "build": "rimraf dist && vue-tsc && vite build && mkdir -p dist/components && cp -a src/components/* dist/components/",
+    "build:publishSnapshot": "bun run build && ./helper-scripts/npm-snapshot-pre-publish.sh && bunx npm publish --tag snapshot && ./helper-scripts/npm-snapshot-post-publish.sh"
   },
   "files": [
     "dist",
@@ -29,28 +30,60 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/project-angus-lastfm.es.js",
       "require": "./dist/project-angus-lastfm.umd.js"
+    },
+    "./components": {
+      "import": "./dist/components/index.ts",
+      "require": "./dist/project-angus-lastfm.umd.js"
+    },
+    "./lib": {
+      "import": "./src/index.ts",
+      "require": "./dist/project-angus-lastfm.umd.js"
     }
   },
   "devDependencies": {
+    "@babel/plugin-transform-typescript": "^7.28.5",
+    "@babel/preset-typescript": "^7.28.5",
     "@microsoft/api-extractor": "^7.55.0",
+    "@tsconfig/node22": "^22.0.4",
+    "@types/jest": "^30.0.0",
     "@vitejs/plugin-vue": "^6.0.1",
     "@vue/language-core": "^3.1.4",
     "@vue/tsconfig": "^0.8.1",
+    "babel-jest": "^30.2.0",
+    "pug": "^3.0.3",
+    "pug-plain-loader": "^1.1.0",
     "rimraf": "^5.0.1",
+    "sass-embedded": "^1.93.3",
     "scss-loader": "^0.0.1",
+    "ts-jest": "^29.4.5",
+    "ts-node": "^10.9.2",
     "typescript": "^5.0.0",
     "unplugin-dts": "^1.0.0-beta.0",
+    "vue": ">=3.3",
     "vite": "7.2.2",
+    "vite-plugin-sass-dts": "^1.3.34",
     "vue-tsc": "^3.1.4"
   },
   "peerDependencies": {
     "@nuxt/ui": "^4.1.0",
     "vue": ">=3.3",
+    "sass-embedded": "^1.93.3",
     "tailwindcss": "^4.1.17",
-    "ky": "^1.14.0"
+    "ky": "^1.14.0",
+    "pug": "^3.0.3",
+    "pug-plain-loader": "^1.1.0"
   },
   "repository": {
     "type": "git",
     "url": "git+https://git.itsrye.dev/JS-Libraries/lastfm-vue.git"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^7.1.0",
+    "@fortawesome/free-solid-svg-icons": "^7.1.0",
+    "@fortawesome/vue-fontawesome": "^3.1.2",
+    "@headlessui/vue": "^1.7.23",
+    "@heroicons/vue": "^2.2.0",
+    "@nuxt/kit": "^4.2.1",
+    "fast-xml-parser": "^5.3.2"
   }
 }

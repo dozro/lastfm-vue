@@ -17,3 +17,13 @@ export {
     getUser, 
     getLovedTracks,
 }
+
+export const lib = {
+    UserInfo,
+    UserLovedTracks,
+    UserRecentTracks,
+    User,
+    getLovedTracks,
+    getRecentTracks,
+    getUser,
+}
