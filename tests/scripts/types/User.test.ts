@@ -10,6 +10,8 @@ describe('testing User Type', () => {
         let inCur = input.lfm.recenttracks.track[i]
         let outCur = out.recenttracks.track[i]
         expect(inCur.name).toBe(outCur.name)
+        expect(inCur.mbid).toBe(outCur.mbid)
+        expect(inCur.artist._mbid).toBe(outCur.artist.mbid)
         expect(inCur.artist.__text).toBe(outCur.artist.name)
     }
 
