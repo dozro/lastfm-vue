@@ -1,0 +1,38 @@
+{
+    "sourceFile": "src/scripts/types/User.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 5,
+            "patches": [
+                {
+                    "date": 1763413107447,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1763413119073,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n         subscriber:number,\n         playcount:number,\n         playlists:number,\n         bootstrap:number,\n-        \n+        age?:number\n     }\n }\n type Tracks = {\n     track:Array<Track>\n"
+                },
+                {
+                    "date": 1763413124257,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,55 @@\n+import { Image, ImageJson } from \"./Image\";\n+import { convertTrackXmlToTrack, type Track } from \"./Track\"\n+import type { TrackXML } from \"./Track\";\n+\n+export interface UserGetInfoType{\n+    user: {\n+        id:number,\n+        name:string,\n+        realname:string,\n+        url:string,\n+        image:Array<ImageJson>,\n+        country:string,\n+        age?:number,\n+        gender:string,\n+        subscriber:number,\n+        playcount:number,\n+        playlists:number,\n+        bootstrap:number,\n+    }\n+}\n+type Tracks = {\n+    track:Array<Track>\n+}\n+export interface UserGetLovedTracks{\n+    lovedtracks:Tracks\n+}\n+export interface UserGetRecentTracks{\n+    recenttracks:Tracks\n+}\n+\n+export function convertUserGetRecentTracksXMLtoUserGetRecentTracks(input:UserGetRecentTracksXML):UserGetRecentTracks{\n+    let tracks:Array<Track> = new Array<Track>(input.lfm.recenttracks.track.length)\n+    for(let i = 0; i < input.lfm.recenttracks.track.length; i++){\n+        tracks[i] = convertTrackXmlToTrack(input.lfm.recenttracks.track[i])\n+    }\n+    return {\n+        recenttracks: {\n+            track: tracks,\n+        },\n+    }\n+}\n+\n+export interface UserGetRecentTracksXML {\n+    lfm: {\n+        recenttracks: {\n+            track:       TrackXML[];\n+            _user:       string;\n+            _page:       string;\n+            _perPage:    string;\n+            _totalPages: string;\n+            _total:      string;\n+        };\n+        _status:      string;\n+    };\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1763413140541,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import type { TrackXML } from \"./Track\";\n \n export interface UserGetInfoType{\n     user: {\n-        id:number,\n+        id?:number,\n         name:string,\n         realname:string,\n         url:string,\n         image:Array<ImageJson>,\n"
+                },
+                {
+                    "date": 1763413149168,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n     user: {\n         id?:number,\n         name:string,\n         realname:string,\n-        url:string,\n+        url!:string,\n         image:Array<ImageJson>,\n         country:string,\n         age?:number,\n         gender:string,\n"
+                },
+                {
+                    "date": 1763413154690,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n         id?:number,\n         name:string,\n         realname:string,\n         url:string,\n-        image:Array<ImageJson>,\n+        image?:Array<ImageJson>,\n         country:string,\n         age?:number,\n         gender:string,\n         subscriber:number,\n"
+                }
+            ],
+            "date": 1763413107447,
+            "name": "Commit-0",
+            "content": "import { Image, ImageJson } from \"./Image\";\nimport { convertTrackXmlToTrack, type Track } from \"./Track\"\nimport type { TrackXML } from \"./Track\";\n\nexport interface UserGetInfoType{\n    user: {\n        id:number,\n        name:string,\n        realname:string,\n        url:string,\n        image:Array<ImageJson>,\n        country:string,\n        age:number,\n        gender:string,\n        subscriber:number,\n        playcount:number,\n        playlists:number,\n        bootstrap:number,\n        \n    }\n}\ntype Tracks = {\n    track:Array<Track>\n}\nexport interface UserGetLovedTracks{\n    lovedtracks:Tracks\n}\nexport interface UserGetRecentTracks{\n    recenttracks:Tracks\n}\n\nexport function convertUserGetRecentTracksXMLtoUserGetRecentTracks(input:UserGetRecentTracksXML):UserGetRecentTracks{\n    let tracks:Array<Track> = new Array<Track>(input.lfm.recenttracks.track.length)\n    for(let i = 0; i < input.lfm.recenttracks.track.length; i++){\n        tracks[i] = convertTrackXmlToTrack(input.lfm.recenttracks.track[i])\n    }\n    return {\n        recenttracks: {\n            track: tracks,\n        },\n    }\n}\n\nexport interface UserGetRecentTracksXML {\n    lfm: {\n        recenttracks: {\n            track:       TrackXML[];\n            _user:       string;\n            _page:       string;\n            _perPage:    string;\n            _totalPages: string;\n            _total:      string;\n        };\n        _status:      string;\n    };\n}"
+        }
+    ]
+}

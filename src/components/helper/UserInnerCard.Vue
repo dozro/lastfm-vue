@@ -1,0 +1,31 @@
+<script setup lang="ts">
+import SimpleContainer from './SimpleContainer.vue';
+
+const props = defineProps<{
+  /**
+   * name to display
+   */
+  name?:string,
+  /**
+   * avatar source url
+   */
+  avatarsrc?:string,
+  profileUrl?:string,
+  scrobbleCount?:number,
+}>()
+</script>
+
+<template lang="pug">
+    SimpleContainer
+    img(class="size-12 shrink-0" :src="avatarsrc")
+    div 
+        div(class="text-xl font-medium text-black dark:text-white")
+            font-awesome-icon(:icon="['fas', 'user']" height="15pt")
+            a(:href="profileUrl")
+                {{ name }}
+        p(class="text-gray-500 dark:text-gray-400")
+            a(href="https://last.fm")last.fm
+            span user
+        p {{scrobbleCount}} Scrobbles
+
+</template>

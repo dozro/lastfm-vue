@@ -14,6 +14,5 @@ describe('testing User Type', () => {
         expect(inCur.artist._mbid).toBe(outCur.artist.mbid)
         expect(inCur.artist.__text).toBe(outCur.artist.name)
     }
-
   });
 });

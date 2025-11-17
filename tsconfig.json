@@ -1,5 +1,4 @@
 {
-  "$schema": "https://www.schemastore.org/tsconfig.json",
   "compilerOptions": {
     "target": "esnext",
     "useDefineForClassFields": true,
@@ -17,7 +16,8 @@
     "isolatedModules": true,
     "skipLibCheck": true,
     "types": [
-      "vite/client"
+      "vite/client",
+      "jest"
     ]
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "src/index.js"]

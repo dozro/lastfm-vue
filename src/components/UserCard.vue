@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import { watchEffect, ref } from 'vue'
 
-import SimpleContainer from './helper/SimpleContainer.vue'
+import UserInnerCard from './helper/UserInnerCard.vue'
 
 import {getUser} from "../scripts/lastFmApi"
+import UserInnerCard from './helper/UserInnerCard.vue';
 const props = defineProps<{
   /**
    * The username you want to look up
@@ -17,6 +18,7 @@ const props = defineProps<{
 const avatarUrl = ref<string>()
 const fullName = ref<string>()
 const url = ref<string>()
+const scrobCount = ref<number>()
 
 watchEffect(async () => {
   if (props.username && props.apiKey) {
@@ -25,6 +27,7 @@ watchEffect(async () => {
       avatarUrl.value = user.getAvatarUrl().toString()
       fullName.value = user.getName()
       url.value = user.getUserUrl().toString()
+      scrobCount.value = user.getPlayCount()
     } catch (err) {
       console.error('Failed to fetch user avatar:', err)
       avatarUrl.value = "https://example.org"
@@ -36,13 +39,5 @@ watchEffect(async () => {
 </script>
 
 <template>
-    <SimpleContainer>
-        <img class="size-12 shrink-0" :src="avatarUrl" alt="Avatar of User" />  
-        <div>    
-            <div class="text-xl font-medium text-black dark:text-white">
-                <font-awesome-icon :icon="['fas', 'user']" height="15pt"/><a :href="url">{{ fullName }}</a>
-            </div>    
-            <p class="text-gray-500 dark:text-gray-400"><a href="https://last.fm">last.fm</a> user</p>  
-        </div>
-    </SimpleContainer>
+    <UserInnerCard :name="fullName" :avatarsrc="avatarUrl" :profile-url="url" :scrobble-count="scrobCount"/>
 </template>

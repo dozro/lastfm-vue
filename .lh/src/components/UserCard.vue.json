@@ -1,0 +1,34 @@
+{
+    "sourceFile": "src/components/UserCard.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 4,
+            "patches": [
+                {
+                    "date": 1763413268300,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1763413700634,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,13 +36,5 @@\n </script>\n \n <template>\n     <SimpleContainer>\n-        <img class=\"size-12 shrink-0\" :src=\"avatarUrl\" alt=\"Avatar of User\" />  \n-        <div>    \n-            <div class=\"text-xl font-medium text-black dark:text-white\">\n-                <font-awesome-icon :icon=\"['fas', 'user']\" height=\"15pt\"/><a :href=\"url\">{{ fullName }}</a>\n-            </div>    \n-            <p class=\"text-gray-500 dark:text-gray-400\"><a href=\"https://last.fm\">last.fm</a> user</p>  \n-        </div>\n-    </SimpleContainer>\n </template>\n"
+                },
+                {
+                    "date": 1763413708832,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,40 @@\n+<script setup lang=\"ts\">\n+import { watchEffect, ref } from 'vue'\n+\n+import UserInnerCard from './helper/UserInnerCard.vue'\n+\n+import {getUser} from \"../scripts/lastFmApi\"\n+const props = defineProps<{\n+  /**\n+   * The username you want to look up\n+   */\n+  username: string,\n+  /**\n+   * your api-key\n+   */\n+  apiKey: string,\n+}>()\n+const avatarUrl = ref<string>()\n+const fullName = ref<string>()\n+const url = ref<string>()\n+\n+watchEffect(async () => {\n+  if (props.username && props.apiKey) {\n+    try {\n+      const user = await getUser(props.username, props.apiKey)\n+      avatarUrl.value = user.getAvatarUrl().toString()\n+      fullName.value = user.getName()\n+      url.value = user.getUserUrl().toString()\n+    } catch (err) {\n+      console.error('Failed to fetch user avatar:', err)\n+      avatarUrl.value = \"https://example.org\"\n+      if (fullName.value === undefined)\n+        fullName.value = \"Unknown\"\n+    }\n+  }\n+})\n+</script>\n+\n+<template>\n+    <us>\n+</template>\n"
+                },
+                {
+                    "date": 1763413715974,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,9 @@\n \n import UserInnerCard from './helper/UserInnerCard.vue'\n \n import {getUser} from \"../scripts/lastFmApi\"\n+import UserInnerCard from './helper/UserInnerCard.vue';\n const props = defineProps<{\n   /**\n    * The username you want to look up\n    */\n@@ -35,6 +36,6 @@\n })\n </script>\n \n <template>\n-    <UserIn>\n+    <UserInnerCard />\n </template>\n"
+                },
+                {
+                    "date": 1763413723220,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,6 +36,6 @@\n })\n </script>\n \n <template>\n-    <UserInnerCard />\n+    <UserInnerCard nam/>\n </template>\n"
+                }
+            ],
+            "date": 1763413268300,
+            "name": "Commit-0",
+            "content": "<script setup lang=\"ts\">\nimport { watchEffect, ref } from 'vue'\n\nimport UserInnerCard from './helper/SimpleContainer.vue'\n\nimport {getUser} from \"../scripts/lastFmApi\"\nconst props = defineProps<{\n  /**\n   * The username you want to look up\n   */\n  username: string,\n  /**\n   * your api-key\n   */\n  apiKey: string,\n}>()\nconst avatarUrl = ref<string>()\nconst fullName = ref<string>()\nconst url = ref<string>()\n\nwatchEffect(async () => {\n  if (props.username && props.apiKey) {\n    try {\n      const user = await getUser(props.username, props.apiKey)\n      avatarUrl.value = user.getAvatarUrl().toString()\n      fullName.value = user.getName()\n      url.value = user.getUserUrl().toString()\n    } catch (err) {\n      console.error('Failed to fetch user avatar:', err)\n      avatarUrl.value = \"https://example.org\"\n      if (fullName.value === undefined)\n        fullName.value = \"Unknown\"\n    }\n  }\n})\n</script>\n\n<template>\n    <SimpleContainer>\n        <img class=\"size-12 shrink-0\" :src=\"avatarUrl\" alt=\"Avatar of User\" />  \n        <div>    \n            <div class=\"text-xl font-medium text-black dark:text-white\">\n                <font-awesome-icon :icon=\"['fas', 'user']\" height=\"15pt\"/><a :href=\"url\">{{ fullName }}</a>\n            </div>    \n            <p class=\"text-gray-500 dark:text-gray-400\"><a href=\"https://last.fm\">last.fm</a> user</p>  \n        </div>\n    </SimpleContainer>\n</template>\n"
+        }
+    ]
+}
