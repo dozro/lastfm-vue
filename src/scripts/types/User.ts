@@ -1,19 +1,22 @@
+import { Image, ImageJson } from "./Image";
 import { convertTrackXmlToTrack, type Track } from "./Track"
 import type { TrackXML } from "./Track";
 
 export interface UserGetInfoType{
-    id:number,
-    name:string,
-    realname:string,
-    url:URL,
-    image:URL,
-    country:string,
-    age:number,
-    gender:string,
-    subscriber:number,
-    playcount:number,
-    playlists:number,
-    bootstrap:number,
+    user: {
+        id?:number,
+        name:string,
+        realname:string,
+        url:string,
+        image?:Array<ImageJson>,
+        country:string,
+        age?:number,
+        gender:string,
+        subscriber:number,
+        playcount:number,
+        playlists:number,
+        bootstrap:number,
+    }
 }
 type Tracks = {
     track:Array<Track>

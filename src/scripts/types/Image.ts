@@ -1,11 +1,9 @@
 export type Image = {
-    _size:  Size;
+    _size:  string;
     __text: string;
 }
 
-export enum Size {
-    Extralarge = "extralarge",
-    Large = "large",
-    Medium = "medium",
-    Small = "small",
+export interface ImageJson {
+    size:string;
+    "#text":string;
 }

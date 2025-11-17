@@ -1,0 +1,36 @@
+@use "tailwindcss";
+
+.card-container {
+  max-width: 24rem;
+  margin: 0 auto;
+  padding: 1.5rem;
+
+  padding-bottom: 5rem;
+  padding-top: 5rem;
+  
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  background: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  outline: 1px solid rgba(0, 0, 0, 0.05);
+
+  transition: background 0.2s ease, box-shadow 0.2s ease, outline-color 0.2s ease;
+
+  &:hover {
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  }
+
+  .dark & {
+    background: #1e293b; // slate-800
+    box-shadow: none;
+    outline: 1px solid rgba(255, 255, 255, 0.1);
+    color: #f1f5f9;
+
+    &:hover {
+      outline-color: rgba(255, 255, 255, 0.18);
+    }
+  }
+}

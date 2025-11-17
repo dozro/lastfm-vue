@@ -1,7 +1,10 @@
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import dts from 'unplugin-dts/vite';
+import ui from '@nuxt/ui/vite';
 import { resolve } from 'path';
+import sassDts from 'vite-plugin-sass-dts';
+
 
 /** @type {import('vite').UserConfig} */
 export default defineConfig({
@@ -14,6 +17,8 @@ export default defineConfig({
       entryRoot: 'src',
       tsconfigPath: './tsconfig.json',
     }),
+    ui(),
+    sassDts(),
   ],
   build: {
     lib: {
@@ -25,7 +30,6 @@ export default defineConfig({
       external: [
         'vue', 
         'ky',
-        /node_modules/,
       ],
       output: {
         globals: {
