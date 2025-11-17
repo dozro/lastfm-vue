@@ -1,0 +1,78 @@
+{
+  "lfm": {
+    "recenttracks": {
+      "track": [
+        {
+          "artist": {
+            "_mbid": "1234-abcd-5678-efgh",
+            "__text": "Daft Punk"
+          },
+          "name": "Harder, Better, Faster, Stronger",
+          "streamable": "0",
+          "mbid": "abcd-1234-efgh-5678",
+          "album": {
+            "_mbid": "zz99-yy88-xx77-ww66",
+            "__text": "Discovery"
+          },
+          "url": "https://www.last.fm/music/Daft+Punk/_/Harder,+Better,+Faster,+Stronger",
+          "image": [
+            {
+              "#text": "https://lastfm-img/example/small.png",
+              "size": "small"
+            },
+            {
+              "#text": "https://lastfm-img/example/medium.png",
+              "size": "medium"
+            },
+            {
+              "#text": "https://lastfm-img/example/large.png",
+              "size": "large"
+            }
+          ],
+          "date": {
+            "_uts": "1716324000",
+            "__text": "21 May 2024, 14:00"
+          }
+        },
+        {
+          "artist": {
+            "_mbid": "9876-wxyz-5432-lmno",
+            "__text": "Radiohead"
+          },
+          "name": "Karma Police",
+          "streamable": "1",
+          "mbid": "lmno-5432-wxyz-9876",
+          "album": {
+            "_mbid": "aa11-bb22-cc33-dd44",
+            "__text": "OK Computer"
+          },
+          "url": "https://www.last.fm/music/Radiohead/_/Karma+Police",
+          "image": [
+            {
+              "#text": "https://lastfm-img/example2/small.png",
+              "size": "small"
+            },
+            {
+              "#text": "https://lastfm-img/example2/medium.png",
+              "size": "medium"
+            },
+            {
+              "#text": "https://lastfm-img/example2/large.png",
+              "size": "large"
+            }
+          ],
+          "date": {
+            "_uts": "1716327600",
+            "__text": "21 May 2024, 15:00"
+          }
+        }
+      ],
+      "_user": "testuser",
+      "_page": "1",
+      "_perPage": "2",
+      "_totalPages": "1",
+      "_total": "2"
+    },
+    "_status": "ok"
+  }
+}

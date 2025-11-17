@@ -11,6 +11,9 @@ export type Track = {
 }
 
 export function convertTrackXmlToTrack(input:TrackXML):Track{
+    if(input === undefined || input.name === undefined || input.artist === undefined){
+        throw "undefined values";
+    }
     return {
         name: input.name,
         mbid: input.mbid,

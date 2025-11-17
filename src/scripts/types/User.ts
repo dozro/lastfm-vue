@@ -27,7 +27,7 @@ export interface UserGetRecentTracks{
 
 export function convertUserGetRecentTracksXMLtoUserGetRecentTracks(input:UserGetRecentTracksXML):UserGetRecentTracks{
     let tracks:Array<Track> = new Array<Track>(input.lfm.recenttracks.track.length)
-    for(let i = 0; i <= input.lfm.recenttracks.track.length; i++){
+    for(let i = 0; i < input.lfm.recenttracks.track.length; i++){
         tracks[i] = convertTrackXmlToTrack(input.lfm.recenttracks.track[i])
     }
     return {
