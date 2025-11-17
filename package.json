@@ -1,4 +1,5 @@
 {
+  "$schema": "https://www.schemastore.org/package.json",
   "name": "@itsrye/project-angus-lastfm",
   "description": "a (incomplete) template for using lastfm in Vue",
   "author": "Rye <npm@itsrye.dev> (http://itsrye.dev/)",
@@ -36,10 +37,10 @@
     "@vue/language-core": "^3.1.4",
     "@vue/tsconfig": "^0.8.1",
     "rimraf": "^5.0.1",
+    "scss-loader": "^0.0.1",
     "typescript": "^5.0.0",
     "unplugin-dts": "^1.0.0-beta.0",
     "vite": "7.2.2",
-    "vue": ">=3.3",
     "vue-tsc": "^3.1.4"
   },
   "peerDependencies": {

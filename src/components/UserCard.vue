@@ -20,6 +20,8 @@ watchEffect(async () => {
     } catch (err) {
       console.error('Failed to fetch user avatar:', err)
       avatarUrl.value = "https://example.org"
+      if (fullName.value === undefined)
+        fullName.value = "Unknown"
     }
   }
 })

@@ -1,10 +1,10 @@
 // Project Gowers (part of Project Angus)
 
 import ky from 'ky';
-import { apiRootURL, getHttpHeaders } from './baseI';
-import type { UserGetInfoType } from './types/User';
+import { apiRootURL, getHttpHeaders } from '../baseI';
+import type { UserGetInfoType } from '../types/User';
 
-export class UserInfo{
+export default class UserInfo{
     private username:string
     private apikey:string
     private name!: string;

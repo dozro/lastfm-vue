@@ -3,6 +3,7 @@ import vue from '@vitejs/plugin-vue';
 import dts from 'unplugin-dts/vite';
 import { resolve } from 'path';
 
+/** @type {import('vite').UserConfig} */
 export default defineConfig({
   plugins: [
     vue(),

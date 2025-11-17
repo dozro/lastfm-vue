@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { ref, watchEffect } from 'vue'
-import { getRecentTracks } from '../scripts/lastFmApi'
-import type { UserRecentTracks } from '../scripts/UserTracks'
+import { ref, watchEffect } from 'vue';
+import { getRecentTracks } from '../scripts/lastFmApi';
+import { UserRecentTracks } from '../scripts/index';
 
 const props = defineProps<{
   username: string,
@@ -32,3 +32,4 @@ watchEffect(async () => {
     </ul>
   </div>
 </template>
+../scripts/User/UserTracks
