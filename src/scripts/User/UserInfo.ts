@@ -14,7 +14,6 @@ export default class UserInfo{
     private constructor(username:string, apikey:string){
         this.username = username
         this.apikey = apikey
-        this.fetchData()
     }
     public async fetchData():Promise<void> {
         const resp = await ky.get(
