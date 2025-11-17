@@ -15,12 +15,16 @@ const props = defineProps<{
     <div>
       <div class="text-xl font-medium text-black dark:text-white">
         <p class="text-gray-500 dark:text-gray-400">
-          <font-awesome-icon :icon="['fas', 'user']" height="15pt" />
-          <a :href="profileUrl">{{ name }}</a>
+            <span class="inline-block">
+                <font-awesome-icon :icon="['fas', 'user']" height="15pt" />
+            </span>
+            <a :href="profileUrl">{{ name }}</a>
         </p>
       </div>
       <p class="text-gray-500 dark:text-gray-400">
-        <font-awesome-icon :icon="['fas', 'music']" height="15pt" />
+        <span class="inline-block">
+            <font-awesome-icon :icon="['fas', 'music']" height="15pt" />
+        </span>
         <span>{{ scrobbleCount }} Scrobbles</span>
       </p>
       <p class="text-gray-500 dark:text-gray-400">
