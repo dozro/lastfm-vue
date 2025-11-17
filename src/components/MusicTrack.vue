@@ -25,6 +25,6 @@ const props = defineProps<{
 <style scoped lang="scss">
 @use "tailwindcss";
 .track-container{
-  border:1pt
+  border: 1pt solid #e5e7eb;
 }
 </style>
