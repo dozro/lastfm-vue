@@ -4,7 +4,13 @@ import { getLovedTracks } from '../scripts/lastFmApi'
 import { UserLovedTracks }  from '../scripts/index'
 
 const props = defineProps<{
+  /**
+   * The username you want to look up
+   */
   username: string,
+  /**
+   * your api-key
+   */
   apiKey: string,
 }>()
 

@@ -5,7 +5,13 @@ import SimpleContainer from './helper/SimpleContainer.vue'
 
 import {getUser} from "../scripts/lastFmApi"
 const props = defineProps<{
+  /**
+   * The username you want to look up
+   */
   username: string,
+  /**
+   * your api-key
+   */
   apiKey: string,
 }>()
 const avatarUrl = ref<string>()

@@ -6,7 +6,13 @@ import { UserRecentTracks } from '../scripts/index';
 import SimpleContainer from './helper/SimpleContainer.vue'
 
 const props = defineProps<{
+  /**
+   * The username you want to look up
+   */
   username: string,
+  /**
+   * your api-key
+   */
   apiKey: string,
 }>()
 
