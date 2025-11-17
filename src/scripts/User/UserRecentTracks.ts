@@ -31,7 +31,6 @@ export default class UserRecentTracks{
         const respAsXML = (jObj as UserGetRecentTracksXML)
         const respAs = convertUserGetRecentTracksXMLtoUserGetRecentTracks(respAsXML)
         this.recentTracks = respAs.recenttracks.track
-        console.debug(jObj, respAs)
     }
     public static async create(username: string, apikey: string):Promise<UserRecentTracks> {
         const instance = new UserRecentTracks(username, apikey)
