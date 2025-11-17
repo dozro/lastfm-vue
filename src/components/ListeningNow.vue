@@ -27,7 +27,7 @@ watchEffect(async () => {
       let urt=  await getRecentTracks(props.username, props.apiKey)
       tracks.value = urt
       if(urt.getMostRecentTrack() === undefined)
-        throw "value is undefined";
+        throw new Error("value is undefined");
       mostrecentTrack.value = urt.getMostRecentTrack()
     } catch (err) {
       console.error('Failed to fetch user avatar:', err)
