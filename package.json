@@ -3,7 +3,7 @@
   "name": "@itsrye/project-angus-lastfm",
   "description": "a (incomplete) template for using lastfm in Vue",
   "author": "Rye <npm@itsrye.dev> (http://itsrye.dev/)",
-  "version": "0.0.19-PREVIEW",
+  "version": "0.0.11",
   "private": false,
   "type": "module",
   "engines": {
@@ -14,7 +14,8 @@
   },
   "license": "SEE LICENSE IN LICENSE",
   "scripts": {
-    "build": "rimraf dist && vue-tsc && vite build"
+    "build": "rimraf dist && vue-tsc && vite build && mkdir -p dist/components && cp -a src/components/* dist/components/",
+    "build:publishSnapshot": "bun run build && bunx npm publish --tag $(npm-snapshot $BUILD_NUMBER)"
   },
   "files": [
     "dist",
@@ -36,6 +37,7 @@
     "@vitejs/plugin-vue": "^6.0.1",
     "@vue/language-core": "^3.1.4",
     "@vue/tsconfig": "^0.8.1",
+    "npm-snapshot": "^1.1.2",
     "rimraf": "^5.0.1",
     "sass-embedded": "^1.93.3",
     "scss-loader": "^0.0.1",
