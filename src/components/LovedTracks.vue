@@ -42,4 +42,3 @@ watchEffect(async () => {
     </ul>
   </SimpleContainer>
 </template>
-../scripts/User/UserTracks
