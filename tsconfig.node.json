@@ -1,0 +1,32 @@
+{
+  "$schema": "https://www.schemastore.org/tsconfig.json",
+  "extends": "@tsconfig/node22/tsconfig.json",
+  "include": 
+    [
+      "src/**/*.ts", 
+      "src/**/*.d.ts", 
+      "src/**/*.tsx", 
+      "src/**/*.vue", 
+      "src/index.js"
+    ],
+  "compilerOptions": {
+    "target": "esnext",
+    "useDefineForClassFields": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "strict": true,
+    "jsx": "preserve",
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "lib": ["esnext", "dom"],
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "declarationDir": "./dist/types",
+    "isolatedModules": true,
+    "skipLibCheck": true,
+    "types": [
+      "vite/client"
+    ]
+  }
+}
