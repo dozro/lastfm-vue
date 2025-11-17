@@ -1,11 +1,11 @@
-export class Image{
-    private size:string
-    private text:string
-    constructor(size:string, text:string){
-        this.size = size
-        this.text = text
-    }
-    public getImageURL(){
-        return this.text
-    }
+export type Image = {
+    _size:  Size;
+    __text: string;
+}
+
+export enum Size {
+    Extralarge = "extralarge",
+    Large = "large",
+    Medium = "medium",
+    Small = "small",
 }
