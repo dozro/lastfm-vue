@@ -1,9 +1,11 @@
-export default function(data:any){
-    jest.mock('ky', () => ({
+export default function(data: any) {
+    const kyMock = {
         get: jest.fn(() =>
             Promise.resolve({
-            json: () => Promise.resolve(data),
+                json: () => Promise.resolve(data),
             })
         ),
-    }));
+    };
+    jest.mock('ky', () => kyMock);
+    return kyMock;
 }
