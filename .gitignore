@@ -45,3 +45,4 @@ components.d.ts
 
 *.tsbuildinfo
 .lh/*
+.snapshot_counter.txt
