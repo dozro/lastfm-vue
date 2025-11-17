@@ -1,7 +1,7 @@
 // Project Gowers (part of Project Angus)
 
-import {UserInfo} from "./UserInfo";
-import { UserLovedTracks, UserRecentTracks } from './UserTracks';
+import {UserInfo} from "./User/UserInfo";
+import { UserLovedTracks, UserRecentTracks } from './User/UserLovedTracks';
 
 export async function getUser(username:string, apiKey: string):Promise<UserInfo>{
     if(apiKey === undefined){
