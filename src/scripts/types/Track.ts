@@ -4,8 +4,42 @@ import { Image } from "./Image"
 export type Track = {
     name:string,
     mbid:string,
-    url:URL,
+    url:string,
     date:Date,
     artist:Artist
     image:Array<Image>
+}
+
+export function convertTrackXmlToTrack(input:TrackXML):Track{
+    return {
+        name: input.name,
+        mbid: input.mbid,
+        url: input.url,
+        date: new Date(input.date._uts),
+        image: input.image,
+        artist: {
+            name: input.artist.__text,
+            mbid: input.artist._mbid,
+        },
+    };
+}
+
+export type TrackXML =  {
+    artist:     {
+         _mbid:  string;
+         __text: string;
+    };
+    name:       string;
+    streamable: string;
+    mbid:       string;
+    album:      {
+         _mbid:  string;
+         __text: string;
+    };
+    url:        string;
+    image:      Image[];
+    date:       {
+        _uts:   string;
+        __text: string;
+    };
 }
