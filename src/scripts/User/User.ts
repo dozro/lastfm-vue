@@ -1,8 +1,7 @@
-import {UserInfo} from "./UserInfo"
-import { getLovedTracks, getUser } from "./lastFmApi"
-import { UserLovedTracks } from "./UserTracks"
+import UserInfo from "./UserInfo"
+import UserLovedTracks from "./UserLovedTracks"
 
-class User{
+export default class User{
     private user:string
     private userInfo:UserInfo
     private lovedTracks:UserLovedTracks
@@ -23,5 +22,3 @@ class User{
     }
     
 }
-
-export {User}
