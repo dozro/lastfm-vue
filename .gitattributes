@@ -1,5 +1,6 @@
 bun.lock linguist-generated
 .snapshot_counter.txt linguist-generated
 .vscode/* linguist-vendored
+src/plugins/* linguist-vendored
 *.mts linguist-language=ts
 *.cjs linguist-language=js
