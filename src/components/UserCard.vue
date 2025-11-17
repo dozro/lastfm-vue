@@ -4,7 +4,6 @@ import { watchEffect, ref } from 'vue'
 import UserInnerCard from './helper/UserInnerCard.vue'
 
 import {getUser} from "../scripts/lastFmApi"
-import UserInnerCard from './helper/UserInnerCard.vue';
 const props = defineProps<{
   /**
    * The username you want to look up
