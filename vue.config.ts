@@ -1,4 +1,9 @@
-module.exports = {
+const { defineConfig } = require('@vue/cli-service')
+
+/**
+ * @type {import('@vue/cli-service').ProjectOptions}
+ */
+module.exports = defineConfig({
   configureWebpack: {
     output: {
       libraryExport: 'default'
@@ -11,4 +16,4 @@ module.exports = {
       config.plugins.delete('prefetch')
     }
   }
-}
+})
