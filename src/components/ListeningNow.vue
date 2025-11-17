@@ -3,6 +3,8 @@ import { ref, watchEffect } from 'vue';
 import { getRecentTracks } from '../scripts/lastFmApi';
 import { UserRecentTracks } from '../scripts/index';
 
+import SimpleContainer from './helper/SimpleContainer.vue'
+
 const props = defineProps<{
   username: string,
   apiKey: string,
@@ -22,7 +24,7 @@ watchEffect(async () => {
 </script>
 
 <template>
-  <div v-if="tracks">
+  <SimpleContainer v-if="tracks">
     <!-- TODO: Make this an actual component -->
     <h2>Recent Tracks for {{ username }}</h2>
     <ul>
@@ -30,6 +32,5 @@ watchEffect(async () => {
         {{ track.name }} by {{ track.artist }}
       </li>
     </ul>
-  </div>
+  </SimpleContainer>
 </template>
-../scripts/User/UserTracks

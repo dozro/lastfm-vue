@@ -8,13 +8,15 @@ const props = defineProps<{
 
 <template>
     <div class="track-container">
-
+        
     </div>
 </template>
 
 <style scoped lang="scss">
-@import "tailwindcss";
+@use "tailwindcss";
 .track-container{
-    border:1pt
+  @apply flex;
+  @apply flex-row;
+  border:1pt
 }
 </style>
