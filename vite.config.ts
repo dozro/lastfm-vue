@@ -3,7 +3,7 @@ import vue from '@vitejs/plugin-vue';
 import dts from 'unplugin-dts/vite';
 import ui from '@nuxt/ui/vite';
 import { resolve } from 'path';
-import sassDts from 'vite-plugin-sass-dts'
+import sassDts from 'vite-plugin-sass-dts';
 
 
 /** @type {import('vite').UserConfig} */
