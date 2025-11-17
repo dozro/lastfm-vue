@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import dts from 'unplugin-dts/vite';
+import ui from '@nuxt/ui/vite'
 import { resolve } from 'path';
 
 /** @type {import('vite').UserConfig} */
@@ -14,6 +15,7 @@ export default defineConfig({
       entryRoot: 'src',
       tsconfigPath: './tsconfig.json',
     }),
+    ui(),
   ],
   build: {
     lib: {
