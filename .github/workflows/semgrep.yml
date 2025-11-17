@@ -1,0 +1,28 @@
+name: "Semgrep Scan"
+
+on:
+  push:
+    branches: [main, devel]
+  pull_request:
+    branches: [main, devel]
+  schedule:
+    - cron: '29 14 * * 1'
+
+jobs:
+  semgrep:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install Semgrep
+        run: pip3 install semgrep
+
+      - name: Run Semgrep scan
+        run: semgrep --config=auto --json > semgrep-results.json
+
+      - name: Upload results
+        uses: actions/upload-artifact@v3
+        with:
+          name: semgrep-results
+          path: semgrep-results.json
