@@ -18,7 +18,7 @@ export function convertTrackXmlToTrack(input:TrackXML):Track{
         name: input.name,
         mbid: input.mbid,
         url: input.url,
-        date: new Date(input.date._uts),
+        date: new Date(parseInt(input.date._uts, 10) * 1000),
         image: input.image,
         artist: {
             name: input.artist.__text,
