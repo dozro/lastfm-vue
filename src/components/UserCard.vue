@@ -40,9 +40,9 @@ watchEffect(async () => {
         <img class="size-12 shrink-0" :src="avatarUrl" alt="Avatar of User" />  
         <div>    
             <div class="text-xl font-medium text-black dark:text-white">
-                <a :href="url">{{ fullName }}</a>
+                <font-awesome-icon :icon="['fas', 'user']" height="15pt"/><a :href="url">{{ fullName }}</a>
             </div>    
-            <p class="text-gray-500 dark:text-gray-400">You have a new message!</p>  
+            <p class="text-gray-500 dark:text-gray-400"><a href="https://last.fm">last.fm</a> user</p>  
         </div>
     </SimpleContainer>
 </template>
