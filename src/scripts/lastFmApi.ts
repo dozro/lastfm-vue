@@ -1,8 +1,6 @@
 // Project Gowers (part of Project Angus)
 
-import ky from 'ky';
 import {UserInfo} from "./UserInfo";
-import { apiRootURL, getHttpHeaders } from './baseI';
 import { UserLovedTracks, UserRecentTracks } from './UserTracks';
 
 export async function getUser(username:string, apiKey: string):Promise<UserInfo>{
