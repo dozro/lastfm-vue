@@ -30,6 +30,14 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/project-angus-lastfm.es.js",
       "require": "./dist/project-angus-lastfm.umd.js"
+    },
+    "./components": {
+      "import": "./dist/components/index.ts",
+      "require": "./dist/project-angus-lastfm.umd.js"
+    },
+    "./lib": {
+      "import": "./src/index.ts",
+      "require": "./dist/project-angus-lastfm.umd.js"
     }
   },
   "devDependencies": {
@@ -48,6 +56,7 @@
   "peerDependencies": {
     "@nuxt/ui": "^4.1.0",
     "vue": ">=3.3",
+    "sass-embedded": "^1.93.3",
     "tailwindcss": "^4.1.17",
     "ky": "^1.14.0"
   },

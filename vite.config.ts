@@ -22,7 +22,11 @@ export default defineConfig({
       fileName: (format) => `project-angus-lastfm.${format}.js`,
     },
     rollupOptions: {
-      external: ['vue', 'ky'],
+      external: [
+        'vue', 
+        'ky',
+        /node_modules/,
+      ],
       output: {
         globals: {
           vue: 'Vue',

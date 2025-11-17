@@ -13,3 +13,9 @@ export default {
     UserCard,
     LovedTracks,
 }
+
+export const vuelib = {
+    ListeningNow,
+    UserCard,
+    LovedTracks,
+}
