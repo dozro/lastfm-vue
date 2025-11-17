@@ -73,16 +73,12 @@ export default class UserInfo{
     public static async create(username: string, apikey: string):Promise<UserInfo> {
         const instance = new UserInfo(username, apikey)
         await instance.fetchData()
-        if (instance === undefined)
-            throw new UndefinedError("instance is undefined, this is most likely an internal error")
         return instance
     }
     public static createAndInject(data:UserGetInfoType):UserInfo{
         console.warn("Don't use this function unless you're sure you know what you're doing")
         const instance = new UserInfo("username", "apikey")
         instance.injectData(data)
-        if (instance === undefined)
-            throw new UndefinedError("instance is undefined, this is most likely an internal error")
         return instance
     }
     /**
