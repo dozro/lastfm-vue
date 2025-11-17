@@ -1,11 +1,9 @@
+<script setup lang="ts">
+import './style/SimpleContainer.module.scss';
+</script>
+
 <template>
-    <div class="mx-auto flex max-w-sm items-center gap-x-4 rounded-xl bg-white p-6 shadow-lg outline outline-black/5 dark:bg-slate-800 dark:shadow-none dark:-outline-offset-1 dark:outline-white/10">
-        <slot>
-
-        </slot>
-    </div>
+  <div class="card-container">
+    <slot></slot>
+  </div>
 </template>
-
-<style scoped lang="scss">
-@use "tailwindcss";
-</style>

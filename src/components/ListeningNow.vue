@@ -42,3 +42,5 @@ watchEffect(async () => {
     <MusicTrack :artist="mostrecentTrack!.artist.name" :url="mostrecentTrack!.url" :title="mostrecentTrack!.name"/>
   </SimpleContainer>
 </template>
+
+<style scoped lang="scss" src="./style/listeningnow.module.scss" />

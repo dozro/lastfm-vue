@@ -2,3 +2,4 @@
 !.npmignore
 !.gitignore
 !*.converted.json
+!*.testdata.json
