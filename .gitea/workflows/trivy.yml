@@ -2,7 +2,7 @@ name: Vulnerability Scan
 
 on:
   push:
-    branch:
+    branches:
         - main
         - devel
         - enh/*
