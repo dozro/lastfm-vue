@@ -1,0 +1,30 @@
+name: Vulnerability Scan
+
+on:
+  push:
+    branch:
+        - main
+        - devel
+        - enh/*
+  schedule:
+    - cron: '0 9 * * *'
+
+jobs:
+  scan:
+    name: Trivy Vulnerability Scan
+    runs-on: ubuntu-latest
+    steps:
+      - name: Pull docker image
+        run: docker pull sample
+      - name: Run Trivy scanner without cache
+        uses: aquasecurity/trivy-action@0.28.0
+        with:
+          scan-type: 'fs'
+          scan-ref: '.'
+          cache: 'false'
+          output: 'trivy-results.sarif'
+      - name: Upload results
+        uses: actions/upload-artifact@v4
+        with:
+          name: trivy-results
+          path: trivy-results.sarif
