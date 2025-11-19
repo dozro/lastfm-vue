@@ -37,7 +37,7 @@ jobs:
         run: bun run build # requires "build": "webpack" in package.json
 
       - name: Publish to npm
-        if: ${{ github.event_name == 'tag' }}
+        if: ${{ github.ref_type == 'tag' }}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPMJS_TOKEN }}
         run: |
